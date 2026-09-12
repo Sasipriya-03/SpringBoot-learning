@@ -1,0 +1,29 @@
+package Sasi;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Task {
+
+	public static void main(String[] args) throws SQLException {
+	
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@ localhost:1521:xe","TASK","Sasi@0305");
+			System.out.println("DB Connected...");
+			Statement s=con.createStatement();
+			s.executeUpdate("insert into students values(2,'Jeevitha',20,'Cyber')");
+			System.out.println("Inserted");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
+
+	private static void Statement() {
+		// TODO Auto-generated method stub
+		
+	}
+}
